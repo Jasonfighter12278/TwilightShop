@@ -2,204 +2,201 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Twilight Shop</title>
+  <title>Vita Bar - Menu</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English+SC&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
     body {
+      font-family: 'Raleway', sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'IM Fell English SC', serif;
-      background: url('https://images.bauerhosting.com/legacy/empire-tmdb/films/8966/images/nEdBHjvRkKwEPD1Ps5A3rRiiLVN.jpg?ar=16%3A9&fit=crop&crop=top&auto=format&w=undefined&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #e8dede;
+      background: #fff;
+      color: #222;
     }
-
-    header {
-      text-align: center;
-      padding: 1.5rem;
-      background: rgba(0,0,0,0.75);
-      color: #e8dede;
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.5rem, 5vw, 2.2rem);
-      letter-spacing: 3px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "🌙";
-      position: absolute;
-      right: 15px;
-      bottom: 10px;
-      font-size: 1.5rem;
-      animation: glow 3s infinite alternate;
-      color: #c41e3a;
-    }
-
-    header img.logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-      background: #000;
-      padding: 5px;
-      box-shadow: 0 0 18px rgba(196,30,58,0.9);
-    }
-
-    .shop-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      padding: 1.5rem;
-      justify-items: center; /* centers cards neatly */
-    }
-
-    .product-card {
-      background: rgba(20, 20, 20, 0.95);
-      border: 2px solid #c41e3a;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      padding: 0.9rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      color: #e8dede;
-      position: relative;
-      overflow: hidden;
-      max-width: 280px;
-    }
-
-    .product-card::before {
-      content: "🦇";
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      font-size: 2rem;
-      color: #c41e3a;
-      opacity: 0;
-      transition: 0.3s;
-    }
-
-    .product-card:hover::before {
-      opacity: 1;
-      transform: rotate(20deg);
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-    }
-
-    .product-card h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 0.4rem;
-      color: #c41e3a;
-    }
-
-    .product-card img {
+    .menu-page {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.6rem;
-      border: 2px solid #c41e3a;
-      transition: transform 0.3s ease;
+      max-width: 1200px;
+      margin: 0 auto 100px auto;
+      padding: 60px 80px;
+      border: 8px solid #004080;
+      position: relative;
+      box-sizing: border-box;
+      min-height: 1600px;
     }
-
-    .product-card:hover img {
-      transform: scale(1.05);
+    .logo {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 180px;
     }
-
-    .product-info {
-      font-size: 0.85rem;
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
+    .beer4nature {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      width: 150px;
+    }
+    h1 {
       text-align: center;
+      font-size: 42px;
+      text-transform: uppercase;
+      margin: 0 0 40px;
+      color: #004080;
     }
-
-    .price {
-      font-size: 1rem;
-      font-weight: bold;
+    h2 {
+      font-size: 24px;
+      color: #e17000;
+      margin: 30px 0 10px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 4px;
+    }
+    .columns {
+      display: flex;
+      gap: 50px;
+    }
+    .column {
+      flex: 1;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0;
+      font-size: 17px;
+    }
+    .note {
+      font-size: 14px;
+      color: #004080;
+      margin-top: 10px;
+    }
+    .highlight-box {
+      border: 3px solid #004080;
+      padding: 10px 15px;
       text-align: center;
-      margin: 0.3rem 0;
-      color: #c41e3a;
-      text-shadow: 0 0 6px rgba(196,30,58,0.8);
+      font-weight: 600;
+      color: #004080;
+      margin: 25px 0;
     }
-
-    .buy-button {
-      display: block;
+    .warning-box {
+      border: 3px solid #e17000;
+      padding: 10px 15px;
       text-align: center;
-      background: linear-gradient(45deg, #000000, #c41e3a);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: 0.25s ease;
-      box-shadow: 0 0 12px rgba(196,30,58,0.7);
-    }
-
-    .buy-button:hover {
-      background: linear-gradient(45deg, #c41e3a, #000000);
-      box-shadow: 0 0 18px rgba(196,30,58,1);
-      transform: scale(1.04);
-    }
-
-    @keyframes glow {
-      from { opacity: 0.4; transform: scale(1); }
-      to { opacity: 1; transform: scale(1.2); }
-    }
-
-    @media (max-width: 600px) {
-      header img.logo {
-        width: 55px;
-        height: 55px;
-      }
-      .product-card h2 {
-        font-size: 0.9rem;
-      }
-      .product-info {
-        font-size: 0.8rem;
-      }
-      .price {
-        font-size: 0.9rem;
-      }
+      font-weight: 600;
+      color: #e17000;
+      margin: 25px 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img class="logo" src="https://i.pinimg.com/736x/f6/35/bb/f635bb600922060e2ed61d78f9e30d60.jpg" alt="Twilight Logo">
-    🌑 Twilight Online Shop 🌑
-  </header>
 
-  <main class="shop-container">
-    <div class="product-card">
-      <h2>Twilight Saga 6 Book Set</h2>
-      <img src="https://media.s-bol.com/jwLP96GNWKry/wp5vAjm/550x547.jpg" alt="Twilight Boek">
-      <p class="product-info">
-        Pak de boeken overal met je mee lees ze volledig en zie wat de verhalen te brengen hebben.
-      </p>
-      <p class="price">€ 46</p>
-      <a href="https://www.bol.com/nl/nl/p/twilight-saga-6-book-set/9300000080832881/?cid=1757346309295-5121005867792&bltgh=018db97c-57f8-4764-89da-1ddbc6217d06.ProductList_Middle.6.ProductImage" target="_blank" class="buy-button">🩸 Koop nu</a>
+  <div class="menu-page">
+    <img class="logo" src="https://impro.usercontent.one/appid/oneComWsb/domain/vitabarmol.be/media/vitabarmol.be/onewebmedia/Ontwerp%20zonder%20titel-4.png?etag=W%2F%221254f-65cde879%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=210%2B210" alt="Vita Bar Beer 4 Nature">
+    <h1>Drankenkaart</h1>
+
+    <div class="columns">
+      <div class="column">
+        <h2>Vat</h2>
+        <div class="item"><span>Stella 25cl</span><span>2.8</span></div>
+        <div class="item"><span>Stella 33cl</span><span>3.2</span></div>
+        <div class="item"><span>St. Bernardus Tripel</span><span>4.5</span></div>
+
+        <h2>Bieren op fles</h2>
+        <div class="item"><span>Jupiler (Huismerk bak bier)</span><span>2.5</span></div>
+        <div class="item"><span>Wittekerke Rosé</span><span>3.5</span></div>
+        <div class="item"><span>Westmalle Dubbel</span><span>4.6</span></div>
+        <div class="item"><span>Westmalle Tripel</span><span>4.6</span></div>
+        <div class="item"><span>Westvleteren 12 (quadrupel)</span><span>5.5</span></div>
+        <div class="item"><span>Vedett Blond</span><span>4.0</span></div>
+        <div class="item"><span>Vedett Kriek</span><span>4.0</span></div>
+        <p class="note">Suggestiebieren op het krijtbord</p>
+
+        <h2>Wijnen / Cava</h2>
+        <div class="item"><span>Rosé “VC” - Alouette</span><span>5 / 25</span></div>
+        <div class="item"><span>Rode wijn “Primitivo”</span><span>7 / 30</span></div>
+        <div class="item"><span>Cava Vega Barcelona</span><span>6 / 27</span></div>
+
+        <h2>Verfrissend</h2>
+        <div class="item"><span>Bio Schulp Appelsap</span><span>2.5</span></div>
+        <div class="item"><span>Chaudfontaine plat</span><span>2.5</span></div>
+        <div class="item"><span>Chaudfontaine bruis</span><span>2.5</span></div>
+        <div class="item"><span>Pomton</span><span>3.5</span></div>
+      </div>
+
+      <div class="column">
+        <h2>Frisdrank</h2>
+        <div class="item"><span>Coca Cola / Zero</span><span>2.8</span></div>
+        <div class="item"><span>Fanta / Sprite</span><span>2.8</span></div>
+        <div class="item"><span>Fuze Tea (peach, green, lemon)</span><span>2.8</span></div>
+        <div class="item"><span>Minute Maid (apple, orange)</span><span>2.8</span></div>
+        <div class="item"><span>Tonic / Tonic elderflower</span><span>2.8</span></div>
+        <div class="item"><span>Tonic Mediterranean</span><span>2.8</span></div>
+        <div class="item"><span>Red Bull</span><span>3.5</span></div>
+        <div class="item"><span>Aquarius</span><span>3.0</span></div>
+
+        <h2>Mocktail / Cocktail</h2>
+        <div class="item"><span>Stonehill Mocktail</span><span>4.8</span></div>
+        <div class="item"><span>Lemongrass Mojito</span><span>5.5</span></div>
+        <div class="item"><span>Gin - 10.0 / 13.0</span></div>
+        <div class="item"><span>Gin Tonic</span><span>11</span></div>
+
+        <h2>Warme dranken</h2>
+        <div class="item"><span>Koffie / Deca</span><span>2.8</span></div>
+        <div class="item"><span>Latte Macchiato</span><span>3.2</span></div>
+        <div class="item"><span>Latte Macchiato Tiramisu</span><span>3.5</span></div>
+        <div class="item"><span>Latte Macchiato Karamel</span><span>3.5</span></div>
+        <div class="item"><span>Dirty Chai Latte</span><span>4.5</span></div>
+        <div class="item"><span>Cappuccino</span><span>3.2</span></div>
+        <div class="item"><span>Cappuccino Choco</span><span>3.5</span></div>
+        <div class="item"><span>Dzjamo Gemberthee</span><span>3.8</span></div>
+        <div class="item"><span>Theebroek (diverse smaken)</span><span>2.8</span></div>
+      </div>
     </div>
 
-    <div class="product-card">
-      <h2>The Twilight Saga Complete Collection</h2>
-      <img src="https://media.s-bol.com/mGM2kVrGlY8r/L8N2Krp/550x366.jpg" alt="Twilight Boek">
-      <p class="product-info">
-        Pak de boeken overal met je mee lees ze volledig en zie wat de verhalen te brengen hebben.
-      </p>
-      <p class="price">€ 87,40</p>
-      <a href="https://www.bol.com/nl/nl/p/the-twilight-saga-complete-collection/9300000044307440/?cid=1757346501824-9720628806565&bltgh=018db97c-57f8-4764-89da-1ddbc6217d06.ProductList_Middle.19.ProductImage" target="_blank" class="buy-button">🩸 Koop nu</a>
+    <div class="highlight-box">Eten op achterzijde</div>
+    <div class="warning-box">In de zomervakantie bestellen aan de toog aub</div>
+    <img class="beer4nature" src="https://beer4nature.be/wp-content/uploads/2021/09/B4N-logo-white.png" alt="Beer4Nature">
+  </div>
+
+  <div class="menu-page">
+    <img class="logo" src="https://impro.usercontent.one/appid/oneComWsb/domain/vitabarmol.be/media/vitabarmol.be/onewebmedia/Ontwerp%20zonder%20titel-4.png?etag=W%2F%221254f-65cde879%22&sourceContentType=image%2Fpng&ignoreAspectRatio&resize=210%2B210" alt="Vita Bar Beer 4 Nature">
+    <h1>Eetkaart</h1>
+
+    <div class="columns">
+      <div class="column">
+        <h2>Snacks</h2>
+        <div class="item"><span>Croque uit vuistje met saus</span><span>5</span></div>
+        <div class="item"><span>Friet met saus</span><span>4.5</span></div>
+        <div class="item"><span>Mexicano / Frikandel</span><span>3.5</span></div>
+        <div class="item"><span>Saté</span><span>4.5</span></div>
+
+        <h2>Sharing is caring</h2>
+        <div class="item"><span>Bitterballen (7 stuks) met mosterd</span><span>7.5</span></div>
+        <div class="item"><span>Portie warme gemengde nootjes</span><span>8.5</span></div>
+
+        <h2>Knabbels</h2>
+        <div class="item"><span>Chips (Paprika / Naturel)</span><span>2.5</span></div>
+        <div class="item"><span>Snoepzak</span><span>2.5</span></div>
+      </div>
+
+      <div class="column">
+        <h2>Pizza</h2>
+        <div class="item"><span>Pizza Margherita</span><span>10</span></div>
+        <div class="item"><span>Pizza 4 kazen</span><span>12</span></div>
+        <div class="item"><span>Pizza BBQ chicken</span><span>12.5</span></div>
+        <div class="item"><span>Pizza Diavola</span><span>14.5</span></div>
+
+        <h2>Spaghetti</h2>
+        <div class="item"><span>1 persoon</span><span>10</span></div>
+        <div class="item"><span>2 personen</span><span>18</span></div>
+        <div class="item"><span>Kinderportie (tot 12 jaar)</span><span>6</span></div>
+
+        <h2>IJssjes</h2>
+        <div class="item"><span>Big Chocolat (ijsboerke)</span><span>3.0</span></div>
+        <div class="item"><span>Raket (ijsboerke)</span><span>2.5</span></div>
+        <div class="item"><span>Cornet (ijsboerke)</span><span>3.0</span></div>
+        <div class="item"><span>Satelliet (ijsboerke)</span><span>2.8</span></div>
+      </div>
     </div>
-  </main>
+
+    <img class="beer4nature" src="https://beer4nature.be/wp-content/uploads/2021/09/B4N-logo-white.png" alt="Beer4Nature">
+  </div>
+
 </body>
 </html>
